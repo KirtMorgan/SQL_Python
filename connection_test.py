@@ -13,10 +13,22 @@ docker_northwind = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL SERVER};SERVER
 cursor = docker_northwind.cursor()
 
 # Executing the SQL
-query = cursor.execute('SELECT * FROM Customers')
+# query = cursor.execute('SELECT * FROM Customers')
+#
+# # Getting results from above SQL execution
+# rows = query.fetchall()
+# # print(rows)
+# for data in rows:
+#     print('My name is',data.ContactName)
 
-# Getting results from above SQL execution
-rows = query.fetchall()
-# print(rows)
-for data in rows:
-    print('My name is',data.ContactName)
+# Homework exercise
+
+def country_sort(country):
+    query = f"SELECT * FROM Customers WHERE Country = '{country}'"
+    rows = cursor.execute(query)
+    return rows.fetchall()
+
+sql_exercise = country_sort('UK')
+print(sql_exercise)
+for data in sql_exercise:
+    print(data.ContactName, data.Country)

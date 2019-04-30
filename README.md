@@ -1,5 +1,5 @@
 # Using PYODBC in Python
-####Looking into databases and how it integrates with python
+#### Looking into databases and how it integrates with python
 Topics covered on SQL:
 - Data Types
 - Creating a database
